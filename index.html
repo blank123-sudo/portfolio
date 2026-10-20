@@ -17,7 +17,7 @@
 
   <header class="nav" id="nav">
     <a href="#home" class="nav__logo">TN.</a>
-    <nav class="nav__links">
+    <nav class="nav__links" aria-label="Main navigation">
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
       <a href="#skills">Skills</a>
@@ -25,15 +25,39 @@
       <a href="#contact">Contact</a>
       <button type="button" class="nav__resume" data-resume-open>Resume</button>
     </nav>
+    <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+      <span class="burger__label" id="burgerLabel">Menu</span>
+      <span class="burger__lines" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
   </header>
 
+  <div class="menu" id="menu" aria-label="Site navigation" inert>
+    <nav class="menu__inner">
+      <ul class="menu__list">
+        <li><a class="menu__link" href="#home"><span>01</span>Home</a></li>
+        <li><a class="menu__link" href="#experience"><span>02</span>Experience</a></li>
+        <li><a class="menu__link" href="#education"><span>03</span>Education</a></li>
+        <li><a class="menu__link" href="#skills"><span>04</span>Skills</a></li>
+        <li><a class="menu__link" href="#projects"><span>05</span>Projects</a></li>
+        <li><a class="menu__link" href="#contact"><span>06</span>Contact</a></li>
+      </ul>
+      <div class="menu__foot">
+        <button type="button" class="btn btn--primary" data-resume-open>View resume</button>
+        <a class="menu__mail" href="mailto:teodoricojr.23@gmail.com">teodoricojr.23@gmail.com</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="hero-track" id="heroTrack">
   <section class="hero" id="home">
     <canvas class="hero__canvas" id="heroCanvas"></canvas>
+    <canvas class="hero__letters" id="lettersCanvas" aria-hidden="true"></canvas>
     <div class="hero__content">
       <p class="hero__hello">Hi, I'm</p>
       <h1 class="hero__name" id="heroName">Teodorico M. Niere Jr.</h1>
       <p class="hero__role">I build <span id="typed" class="typed"></span><span class="caret"></span></p>
       <p class="hero__text">WordPress developer with 2 years of experience customizing, optimizing and maintaining dynamic WordPress sites. Based in Cebu, Philippines.</p>
+      <p class="hero__hint">Scroll down and watch the letters transform. Drag any letter to play with it.</p>
       <div class="hero__actions">
         <button type="button" class="btn btn--primary magnetic" data-resume-open>View resume</button>
         <a href="#contact" class="btn btn--ghost magnetic">Contact me</a>
@@ -41,6 +65,7 @@
     </div>
     <a href="#experience" class="hero__scroll" aria-label="Scroll down"><span></span></a>
   </section>
+  </div>
 
   <main>
     <section class="section" id="experience">
@@ -95,8 +120,10 @@
     </section>
 
     <section class="section" id="education">
+      <div class="edu-track" id="eduTrack">
+        <div class="edu-pin" id="eduPin">
       <h2 class="section__title reveal">Education</h2>
-      <p class="section__lead reveal">Tap the card to flip it.</p>
+      <p class="section__lead reveal">Scroll to follow the years, or tap the card to flip it.</p>
       <div class="edu reveal reveal--wipe">
         <button type="button" class="flip" id="flipCard" aria-pressed="false" aria-label="Education card, press to flip">
           <span class="flip__inner">
@@ -124,6 +151,8 @@
             <li><b>2023</b></li>
             <li><b>2024</b><span>May</span></li>
           </ol>
+        </div>
+      </div>
         </div>
       </div>
     </section>
@@ -173,24 +202,26 @@
     </section>
 
     <section class="section" id="projects">
+      <div class="proj-track" id="projTrack">
+        <div class="proj-pin" id="projPin">
       <h2 class="section__title reveal">Projects</h2>
       <p class="section__lead reveal">A few things I've built. Replace these with your own.</p>
-      <div class="projects">
-        <article class="project tilt reveal">
+      <div class="projects" id="projGrid">
+        <article class="project tilt">
           <div class="project__thumb thumb-a"></div>
           <h3>Weather Dashboard</h3>
           <p>Live forecasts with search, saved cities and a clean chart view.</p>
           <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
           <a href="#" class="project__link">View project</a>
         </article>
-        <article class="project tilt reveal">
+        <article class="project tilt">
           <div class="project__thumb thumb-b"></div>
           <h3>Online Store</h3>
           <p>Product pages, cart and checkout flow built for small businesses.</p>
           <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
           <a href="#" class="project__link">View project</a>
         </article>
-        <article class="project tilt reveal">
+        <article class="project tilt">
           <div class="project__thumb thumb-c"></div>
           <h3>Task Planner</h3>
           <p>Drag-and-drop task board that keeps your data in the browser.</p>
@@ -198,17 +229,13 @@
           <a href="#" class="project__link">View project</a>
         </article>
       </div>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="contact">
       <h2 class="section__title reveal">Contact</h2>
-      <p class="section__lead reveal">Have a project or a question? Send me a message or reach me directly.</p>
-      <ul class="contact-list reveal">
-        <li><span>Email</span><a href="mailto:teodoricojr.23@gmail.com">teodoricojr.23@gmail.com</a></li>
-        <li><span>Phone</span><a href="tel:+639319880919">0931 988 0919</a></li>
-        <li><span>Location</span>Upper Mohon, Talisay City, Cebu</li>
-        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/teodorico-niere-jr" target="_blank" rel="noopener">in/teodorico-niere-jr</a></li>
-      </ul>
+      <p class="section__lead reveal">Have a project or a question? Send me a message. My other contact details are in the footer.</p>
       <form class="form reveal" id="contactForm" novalidate>
         <div class="field">
           <input type="text" id="name" name="name" placeholder=" " required>
@@ -231,9 +258,58 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <p>&copy; <span id="year"></span> Teodorico M. Niere Jr. Built with HTML, CSS and JavaScript.</p>
+  <footer class="footer" id="footer">
+    <div class="footer__inner">
+      <div class="footer__brand reveal">
+        <a href="#home" class="nav__logo">TN.</a>
+        <p class="footer__tag">Let's build something great together.</p>
+        <p class="footer__sub">WordPress Website Developer based in Cebu, Philippines.</p>
+        <button type="button" class="btn btn--primary magnetic" data-resume-open>View resume</button>
+      </div>
+      <ul class="contact-list">
+          <li class="contact-item reveal">
+            <a class="contact-card" href="mailto:teodoricojr.23@gmail.com">
+              <span class="contact-card__icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span>
+              <span class="contact-card__text"><small>Email</small><strong>teodoricojr.23@gmail.com</strong></span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="contact-card__arrow" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+            <button type="button" class="copy" data-copy="teodoricojr.23@gmail.com" aria-label="Copy email"><span class="copy__a"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></svg></span><span class="copy__b"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span></button>
+          </li>
+          <li class="contact-item reveal">
+            <a class="contact-card" href="tel:+639319880919">
+              <span class="contact-card__icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span>
+              <span class="contact-card__text"><small>Phone</small><strong>0931 988 0919</strong></span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="contact-card__arrow" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+            <button type="button" class="copy" data-copy="0931 988 0919" aria-label="Copy phone"><span class="copy__a"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></svg></span><span class="copy__b"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span></button>
+          </li>
+          <li class="contact-item reveal">
+            <a class="contact-card" href="https://www.google.com/maps/search/?api=1&query=Upper+Mohon+Talisay+City+Cebu" target="_blank" rel="noopener">
+              <span class="contact-card__icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+              <span class="contact-card__text"><small>Location</small><strong>Upper Mohon, Talisay City, Cebu</strong></span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="contact-card__arrow" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+          </li>
+          <li class="contact-item reveal">
+            <a class="contact-card" href="https://www.linkedin.com/in/teodorico-niere-jr" target="_blank" rel="noopener">
+              <span class="contact-card__icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 11v5M8 8v.01M12 16v-5m0 2.5c0-1.5 1-2.5 2.5-2.5S17 12 17 13.5V16"/></svg></span>
+              <span class="contact-card__text"><small>LinkedIn</small><strong>in/teodorico-niere-jr</strong></span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="contact-card__arrow" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+          </li>
+      </ul>
+    </div>
+    <p class="footer__copy">&copy; <span id="year"></span> Teodorico M. Niere Jr.</p>
   </footer>
+
+  <button type="button" class="to-top" id="toTop" aria-label="Back to top">
+    <svg class="to-top__ring" viewBox="0 0 52 52" aria-hidden="true">
+      <circle class="to-top__track" cx="26" cy="26" r="24"/>
+      <circle class="to-top__bar" id="toTopBar" cx="26" cy="26" r="24"/>
+    </svg>
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="to-top__arrow" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>
+  </button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <dialog class="resume" id="resumeDialog" aria-labelledby="resumeTitle">
     <div class="resume__bar">
