@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teodorico M. Niere Jr. | WordPress Website Developer</title>
+  <meta name="description" content="Portfolio and resume of Teodorico M. Niere Jr., WordPress website developer based in Cebu, Philippines.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="progress" id="progress"></div>
+
+  <header class="nav" id="nav">
+    <a href="#home" class="nav__logo">TN.</a>
+    <nav class="nav__links">
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button type="button" class="nav__resume" data-resume-open>Resume</button>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <canvas class="hero__canvas" id="heroCanvas"></canvas>
+    <div class="hero__content">
+      <p class="hero__hello">Hi, I'm</p>
+      <h1 class="hero__name" id="heroName">Teodorico M. Niere Jr.</h1>
+      <p class="hero__role">I build <span id="typed" class="typed"></span><span class="caret"></span></p>
+      <p class="hero__text">WordPress developer with 2 years of experience customizing, optimizing and maintaining dynamic WordPress sites. Based in Cebu, Philippines.</p>
+      <div class="hero__actions">
+        <button type="button" class="btn btn--primary magnetic" data-resume-open>View resume</button>
+        <a href="#contact" class="btn btn--ghost magnetic">Contact me</a>
+      </div>
+    </div>
+    <a href="#experience" class="hero__scroll" aria-label="Scroll down"><span></span></a>
+  </section>
+
+  <main>
+    <section class="section" id="experience">
+      <div class="xp-track" id="xpTrack">
+        <div class="xp-pin" id="xpPin">
+      <h2 class="section__title reveal">Experience</h2>
+      <p class="section__lead reveal">WordPress Website Developer and Modifier. Keep scrolling to move through what I do, or pick a topic yourself.</p>
+      <div class="xp" id="xp">
+        <div class="xp__line"><i></i></div>
+        <article class="xp__item reveal reveal--right">
+          <span class="xp__dot"></span>
+          <header class="xp__head">
+            <div>
+              <h3>Website Developer</h3>
+              <p class="xp__org">Proweaver, Inc.</p>
+            </div>
+            <div class="xp__meta">
+              <span class="badge">Current</span>
+              <p>July 2024 to Present<br>Cebu City, Philippines</p>
+            </div>
+          </header>
+          <div class="xp__body">
+            <div class="tabs" role="tablist" aria-label="Responsibilities">
+              <button class="tab is-active" role="tab" id="tab-1" aria-selected="true" aria-controls="panel-1" type="button">Modification</button>
+              <button class="tab" role="tab" id="tab-2" aria-selected="false" aria-controls="panel-2" tabindex="-1" type="button">Front-end</button>
+              <button class="tab" role="tab" id="tab-3" aria-selected="false" aria-controls="panel-3" tabindex="-1" type="button">Maintenance</button>
+              <button class="tab" role="tab" id="tab-4" aria-selected="false" aria-controls="panel-4" tabindex="-1" type="button">Collaboration</button>
+            </div>
+            <div class="panels">
+              <div class="panel is-active" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+                <h4>Website modification and customization</h4>
+                <p>Translated complex client instructions and design layouts into responsive, fully functional WordPress pages.</p>
+              </div>
+              <div class="panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+                <h4>Front-end implementation</h4>
+                <p>Leveraged core web technologies including HTML5, CSS3, PHP and JavaScript/jQuery to modify templates and fine-tune user interfaces.</p>
+              </div>
+              <div class="panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+                <h4>Maintenance and troubleshooting</h4>
+                <p>Diagnosed and resolved website bugs, cross-browser compatibility issues and plugin conflicts to secure optimal site performance.</p>
+              </div>
+              <div class="panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" hidden>
+                <h4>Client collaboration</h4>
+                <p>Interpreted unique stakeholder requirements and managed updates efficiently within tight production timelines and company standards.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <h2 class="section__title reveal">Education</h2>
+      <p class="section__lead reveal">Tap the card to flip it.</p>
+      <div class="edu reveal reveal--wipe">
+        <button type="button" class="flip" id="flipCard" aria-pressed="false" aria-label="Education card, press to flip">
+          <span class="flip__inner">
+            <span class="flip__face flip__front">
+              <span class="flip__mono">BSIT</span>
+              <span class="flip__title">Bachelor of Science in Information Technology</span>
+              <span class="flip__school">Asian College of Technology</span>
+              <span class="flip__hint">Click to flip</span>
+            </span>
+            <span class="flip__face flip__back">
+              <span class="flip__label">Duration</span>
+              <span class="flip__title">June 2020 to May 2024</span>
+              <span class="flip__label">Location</span>
+              <span class="flip__title">Cebu City, Philippines</span>
+              <span class="flip__hint">Click to flip back</span>
+            </span>
+          </span>
+        </button>
+        <div class="edu__side">
+          <p class="edu__count"><span data-count="4">0</span><small>years of study</small></p>
+          <ol class="years" aria-label="Years studied">
+            <li><b>2020</b><span>June</span></li>
+            <li><b>2021</b></li>
+            <li><b>2022</b></li>
+            <li><b>2023</b></li>
+            <li><b>2024</b><span>May</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="stack-head" id="stackHead">
+        <h2 class="section__title reveal">Skills</h2>
+        <p class="section__lead reveal">What I work with day to day. Scroll to stack the cards.</p>
+      </div>
+      <div class="stack" id="skillStack">
+        <article class="stack-card stack-card--1">
+          <div class="stack-card__inner">
+            <span class="stack-card__num">01</span>
+            <h3>CMS expertise</h3>
+            <ul class="chips"><li>WordPress</li><li>Theme customization</li><li>Plugin customization</li><li>Gutenberg</li><li>Elementor</li></ul>
+          </div>
+        </article>
+        <article class="stack-card stack-card--2">
+          <div class="stack-card__inner">
+            <span class="stack-card__num">02</span>
+            <h3>Front-end styling</h3>
+            <ul class="chips"><li>HTML5</li><li>CSS3</li><li>Basic JavaScript</li></ul>
+          </div>
+        </article>
+        <article class="stack-card stack-card--3">
+          <div class="stack-card__inner">
+            <span class="stack-card__num">03</span>
+            <h3>Site optimization</h3>
+            <ul class="chips"><li>Speed optimization</li><li>Mobile responsiveness</li><li>SEO best practices</li></ul>
+          </div>
+        </article>
+        <article class="stack-card stack-card--4">
+          <div class="stack-card__inner">
+            <span class="stack-card__num">04</span>
+            <h3>Maintenance and troubleshooting</h3>
+            <ul class="chips"><li>Bug fixing</li><li>Plugin integration</li><li>Security updates</li></ul>
+          </div>
+        </article>
+        <article class="stack-card stack-card--5">
+          <div class="stack-card__inner">
+            <span class="stack-card__num">05</span>
+            <h3>Tools and workflow</h3>
+            <ul class="chips"><li>Git</li><li>phpMyAdmin</li><li>Responsive/mobile design</li><li>Cross-browser optimization</li></ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <h2 class="section__title reveal">Projects</h2>
+      <p class="section__lead reveal">A few things I've built. Replace these with your own.</p>
+      <div class="projects">
+        <article class="project tilt reveal">
+          <div class="project__thumb thumb-a"></div>
+          <h3>Weather Dashboard</h3>
+          <p>Live forecasts with search, saved cities and a clean chart view.</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          <a href="#" class="project__link">View project</a>
+        </article>
+        <article class="project tilt reveal">
+          <div class="project__thumb thumb-b"></div>
+          <h3>Online Store</h3>
+          <p>Product pages, cart and checkout flow built for small businesses.</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          <a href="#" class="project__link">View project</a>
+        </article>
+        <article class="project tilt reveal">
+          <div class="project__thumb thumb-c"></div>
+          <h3>Task Planner</h3>
+          <p>Drag-and-drop task board that keeps your data in the browser.</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          <a href="#" class="project__link">View project</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2 class="section__title reveal">Contact</h2>
+      <p class="section__lead reveal">Have a project or a question? Send me a message or reach me directly.</p>
+      <ul class="contact-list reveal">
+        <li><span>Email</span><a href="mailto:teodoricojr.23@gmail.com">teodoricojr.23@gmail.com</a></li>
+        <li><span>Phone</span><a href="tel:+639319880919">0931 988 0919</a></li>
+        <li><span>Location</span>Upper Mohon, Talisay City, Cebu</li>
+        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/teodorico-niere-jr" target="_blank" rel="noopener">in/teodorico-niere-jr</a></li>
+      </ul>
+      <form class="form reveal" id="contactForm" novalidate>
+        <div class="field">
+          <input type="text" id="name" name="name" placeholder=" " required>
+          <label for="name">Your name</label>
+          <small class="error" data-for="name"></small>
+        </div>
+        <div class="field">
+          <input type="email" id="email" name="email" placeholder=" " required>
+          <label for="email">Your email</label>
+          <small class="error" data-for="email"></small>
+        </div>
+        <div class="field">
+          <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+          <label for="message">Message</label>
+          <small class="error" data-for="message"></small>
+        </div>
+        <button type="submit" class="btn btn--primary magnetic">Send message</button>
+        <p class="form__status" id="formStatus" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Teodorico M. Niere Jr. Built with HTML, CSS and JavaScript.</p>
+  </footer>
+
+  <dialog class="resume" id="resumeDialog" aria-labelledby="resumeTitle">
+    <div class="resume__bar">
+      <h2 id="resumeTitle">Resume</h2>
+      <div class="resume__actions">
+        <a href="pdf/resume.pdf" target="_blank" rel="noopener" class="btn btn--ghost">Open in new tab</a>
+        <a href="pdf/resume.pdf" download="Teodorico-Niere-Jr-Resume.pdf" class="btn btn--primary">Download PDF</a>
+        <button type="button" class="resume__close" data-resume-close aria-label="Close resume">&times;</button>
+      </div>
+    </div>
+    <iframe class="resume__frame" id="resumeFrame" title="Resume of Teodorico M. Niere Jr."></iframe>
+  </dialog>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
