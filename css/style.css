@@ -348,8 +348,9 @@ ul { list-style: none; }
 
 /* Reveal variants */
 .reveal--right { transform: translateX(70px); }
-.reveal--wipe { transform: none; clip-path: inset(0 100% 0 0); transition: opacity .8s, clip-path 1.2s cubic-bezier(.2, .8, .2, 1); }
-.reveal--wipe.is-in { clip-path: inset(-30px -30px -30px -30px); }
+/* Education wipe: applied to the children, never to the observed .edu element (Chrome treats a fully clipped element as not visible, so it would never reveal) */
+.edu .flip, .edu .edu__side { clip-path: inset(-30px 100% -30px -30px); transition: clip-path 1.2s cubic-bezier(.2, .8, .2, 1); }
+.edu.is-in .flip, .edu.is-in .edu__side { clip-path: inset(-30px); }
 
 /* Experience: timeline that draws itself while scrolling */
 .xp-track { height: 230vh; }
@@ -433,7 +434,7 @@ ul { list-style: none; }
   .edu { grid-template-columns: 1fr; gap: 28px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .reveal--wipe { clip-path: none; }
+  .edu .flip, .edu .edu__side { clip-path: none; }
   .years::after { transform: scaleX(1); }
   .xp__line i { transform: scaleY(1); }
 }
